@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  ---main-padding: 50px;
+  --main-color: #2196f3;
+  --section-color: #ececec;
+  --hover-background-color: #fafafa;
+  --text-secoundary-color: #777;
+  --main-transition: 0.5s;
+  --features-first-color: #f44036;
+  --features-secound-color: #009688;
+  --features-third-color: #03a9f4;
+}
+
+body {
+  font-family: roboto, open-sans;
+  height: 100vh;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+}
+.window {
+  width: 500px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+@keyframes scalingOut {
+  from {
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+  }
+  to {
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+  }
+}
+@keyframes scalingIn {
+  from {
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+  }
+}
+.window .congrates {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 30px;
+}
+.window .choice {
+  margin: 20px;
+}
+.window select {
+  margin-left: 10px;
+  width: 100px;
+  padding: 5px;
+  background-color: white;
+  outline: none;
+  border: 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.window select option {
+  background-color: #eee;
+  cursor: pointer;
+}
+.window .timer {
+  font-size: 18px;
+  font-weight: 500;
+}
+.window button {
+  all: unset;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.window button:hover {
+  background-color: #ddd;
+}
+
+.game {
+  margin: auto;
+  width: 750px;
+  transition: filter 0.3s;
+  filter: blur(3px);
+}
+.game .top {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  border: 4px solid #03a9f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.game .top span {
+  font-size: 18px;
+}
+.game .cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game .cards .card {
+  width: 140px;
+  height: 140px; /* Adjust based on your needs */
+  margin: 5px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.game .cards .card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back face when not flipped */
+}
+
+.game .cards .card .front {
+  background-color: #333; /* Card front color */
+  border: 4px solid #03a9f4;
+  position: relative;
+}
+.game .cards .card .front:after {
+  content: '!';
+  font-size: 100px;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game .cards .card .back {
+  background-color: #607d8b;
+  transform: rotateY(180deg); /* Initially flipped */
+}
+
+.game .cards .card.flipped {
+  transform: rotateY(180deg); /* When flipped, rotate the card */
+}
+.game .cards .card.is-flipped {
+  transform: rotateY(180deg); /* When flipped, rotate the card */
+}
+.game .cards .card.is-matched {
+  transform: rotateY(180deg) !important; /* When flipped, rotate the card */
+}
+.game .cards .card img {
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding: 30px;
+  text-align: center;
+  background-color: #eee;
+  width: 100%;
+  font-size: 18px;
+}
+footer span span {
+  font-weight: bold;
+}
