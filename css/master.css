@@ -38,6 +38,7 @@ ul {
   transform: translateX(-50%);
   z-index: 2;
 }
+
 @keyframes scalingOut {
   from {
     left: 50%;
@@ -96,6 +97,10 @@ ul {
   font-weight: 500;
   transition: 0.3s;
   cursor: pointer;
+}
+.window .choice span {
+  display: block;
+  margin: 10px 0;
 }
 .window button:hover {
   background-color: #ddd;
@@ -190,4 +195,20 @@ footer {
 }
 footer span span {
   font-weight: bold;
+}
+
+@media (max-width: 667px) {
+  .window {
+    width: 300px;
+  }
+  .window .congrates {
+    font-size: 20px;
+  }
+  .game {
+    width: 400px;
+  }
+  .game .cards .card {
+    width: 90px;
+    height: 90px;
+  }
 }
